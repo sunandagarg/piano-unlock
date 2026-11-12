@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>30-Day Piano Unlock</title>
+<meta name="description" content="A guided 30-day piano course: 25 minutes a day, notation that listens to you play, ear quizzes and four songs to unlock.">
+<meta name="theme-color" content="#F2F5F4" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#111615" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%2317201F'/%3E%3Crect x='4' y='5' width='24' height='4' fill='%23B4232C'/%3E%3Cg fill='%23fff'%3E%3Crect x='4' y='10' width='7' height='17'/%3E%3Crect x='12.5' y='10' width='7' height='17'/%3E%3Crect x='21' y='10' width='7' height='17'/%3E%3C/g%3E%3Cg fill='%2317201F'%3E%3Crect x='9.5' y='10' width='4.5' height='10'/%3E%3Crect x='18' y='10' width='4.5' height='10'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="top"><h1>30-Day Piano Unlock</h1><span class="sync">Progress is saved on this device.</span></div>
+    <div class="bar"><i id="pbar"></i></div>
+    <span class="muted" id="pcount">0 of 30 days done</span>
+  </header>
+
+  <div id="intro"></div>
+  <div id="micbox"></div>
+  <section class="card" id="main" aria-live="polite"></section>
+
+  <section class="plan">
+    <h2>Songs you unlock</h2>
+    <div class="songs" id="songs"></div>
+    <h2>All 30 days</h2>
+    <div id="plan" class="plan"></div>
+  </section>
+
+  <details>
+    <summary>Rules, singing ladder, patterns and tricks</summary>
+    <div class="cols">
+      <div>
+        <h3>The three rules</h3>
+        <ul>
+          <li><b>Three coins.</b> A passage is done when you play it cleanly three times in a row. A mistake puts you back to zero.</li>
+          <li><b>The floor.</b> On a bad day, five minutes of replaying anything counts as done.</li>
+          <li><b>Never miss twice.</b> The day after a skipped day is always at least a floor day.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Singing ladder</h3>
+        <ol>
+          <li>Play the pattern until you can talk over it.</li>
+          <li>Hum the tune over held chords.</li>
+          <li>Speak the lyrics in rhythm over the full pattern.</li>
+          <li>Sing. Where hands and voice collide, drop to held chords for that line.</li>
+        </ol>
+      </div>
+      <div>
+        <h3>Six patterns</h3>
+        <ol>
+          <li><b>Held chords</b> (day 8)</li>
+          <li><b>Pulse</b> (day 9)</li>
+          <li><b>Rocking bass</b> (day 10)</li>
+          <li><b>The push</b> (day 11)</li>
+          <li><b>The roll</b> (day 15)</li>
+          <li><b>Octave and offbeat</b> (day 23)</li>
+        </ol>
+      </div>
+      <div>
+        <h3>Tricks</h3>
+        <ul>
+          <li><b>Lazy shapes</b> and <b>common tones</b> (days 8, 19)</li>
+          <li><b>Chord numbers</b> for changing key (days 9, 17, 26)</li>
+          <li><b>Sus4 and add2</b> colour notes (days 12, 24)</li>
+          <li><b>Clean pedal</b> (day 16)</li>
+          <li><b>Bass walk</b> (days 18, 24)</li>
+          <li><b>No-stop rule</b> (day 12)</li>
+        </ul>
+      </div>
+    </div>
+  </details>
+
+  <details>
+    <summary>Sheet music and recordings</summary>
+    <div>
+      <p>Every Minuet note you need in week 1 is shown and played on this page. For the three pop songs the page teaches chords, patterns and tricks but does not reproduce the songs, so you need your own licensed chord chart or sheet and the recording on whichever service you use.</p>
+      <ul style="margin-top:10px">
+        <li>Minuet in G (Christian Petzold, from the Notebook for Anna Magdalena Bach) is in the public domain. Free scores are on IMSLP and Mutopia.</li>
+        <li><a href="https://www.musicnotes.com/sheetmusic/train/drops-of-jupiter/MN0114023" target="_blank" rel="noopener">Drops of Jupiter on Musicnotes</a></li>
+        <li><a href="https://www.musicnotes.com/sheetmusic/david-gray/this-years-love/MN0044648" target="_blank" rel="noopener">This Year's Love on Musicnotes</a></li>
+        <li><a href="https://www.musicnotes.com/sheetmusic/the-beatles/let-it-be/MN0119793_D7" target="_blank" rel="noopener">Let It Be on Musicnotes</a></li>
+        <li><a href="https://www.musicnotes.com/sheetmusic/sara-bareilles/love-song/MN0138301" target="_blank" rel="noopener">Love Song on Musicnotes</a></li>
+      </ul>
+      <p class="muted" style="margin-top:10px">To record yourself, use your phone's voice memo app for now. A built-in recorder is planned.</p>
+    </div>
+  </details>
+  <details>
+    <summary>Microphone and your data</summary>
+    <div class="cols">
+      <div>
+        <h3>Listening</h3>
+        <p id="micstate" class="muted"></p>
+        <div class="actions"><button type="button" class="ghost small" id="micagain">Run the microphone check</button></div>
+        <p class="muted">The microphone is on only while listening is running. Sound is analysed on this device and is never uploaded or stored.</p>
+      </div>
+      <div>
+        <h3>Your progress</h3>
+        <p class="muted">Finished days, ratings and notes are stored in this browser only. Export a file to back them up or to move to another device.</p>
+        <div class="actions">
+          <button type="button" class="ghost small" id="exportbtn">Export progress</button>
+          <button type="button" class="ghost small" id="importbtn">Import progress</button>
+          <input type="file" id="importfile" accept="application/json,.json" hidden>
+        </div>
+        <p id="datamsg" class="fmsg" aria-live="polite"></p>
+      </div>
+    </div>
+  </details>
+
+  <footer>
+    <span>Notation drawn with VexFlow. Pitch detection by pitchy. Both are open source under the MIT licence.</span>
+    <span>Minuet in G is in the public domain. Pop songs are named and taught as chords and patterns only.</span>
+  </footer>
+</div>
+<script src="vendor/vexflow.js"></script>
+<script src="vendor/pitchy.js"></script>
+<script src="js/listen.js"></script>
+<script src="js/content.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
